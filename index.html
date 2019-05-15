@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="testApp">
+  <head>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/voiture.json"></script>
+    <script src="assets/js/script.js"></script>
+    <meta charset="utf-8">
+    <title>Exercice 1</title>
+  </head>
+  <body ng-controller="cars">
+    <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+      <thead>
+        <th>Marque</th>
+        <th>Couleur</th>
+      </thead>
+      <tr ng-repeat = "voiture in voitures | orderBy:'couleur'" ng-hide="voiture.couleur == 'verte'">
+        <td>
+          {{voiture.marque}}
+
+        </td>
+        <td>
+          {{voiture.couleur}}
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
